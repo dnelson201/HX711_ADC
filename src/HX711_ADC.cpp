@@ -44,7 +44,7 @@ void HX711_ADC::begin(uint8_t gain)
 *   Running this for 1-5s before tare() seems to improve the tare accuracy */
 int HX711_ADC::start(unsigned int t)
 {
-	t += 400;
+	t += millis() + 400;
 	while(millis() < t) 
 	{
 		getData();
